@@ -23,11 +23,15 @@ renderer.setSize(sizes.width, sizes.height);
 
 // Animation
 function animate() {
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
-
+  // update objects
   mesh.rotation.x += 0.01;
   mesh.rotation.y += 0.01;
+
+  // update the canvas
+  renderer.render(scene, camera);
+
+  // call the function again at around 60fps
+  requestAnimationFrame(animate);
 }
 
 animate();
